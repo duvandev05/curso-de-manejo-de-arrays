@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Reto con forEach</h1>
+    <div id="app"></div>
+    <script>
+        const task = [
+            {title: "tarea1", description:"completada", status: true},
+            {title: "tarea2", description:"incompleta", status: false},
+            {title: "tarea3", description:"incompleta", status: false},
+            {title: "tarea4", description:"completada",status: true},
+        ];
+        const app = document.getElementById('app');
+        task.forEach(chores =>{
+            app.innerHTML += `<li>${chores.title} - ${chores.description} - <input type="checkbox" ${chores.status ? 'checked' : ''}/></li>`;
+        });
+        
+    </script>
+</body>
+</html>
