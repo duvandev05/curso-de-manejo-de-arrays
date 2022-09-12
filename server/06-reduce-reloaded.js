@@ -17,3 +17,47 @@ const rta = items.reduce((obj, item) =>{
 
 console.log(rta);
 
+
+//reduce con arryas de objetos 
+const data = [
+    {
+      name: "Nicolas",
+      level: "low",
+    },
+    {
+      name: "Andrea",
+      level: "medium",
+    },
+    {
+      name: "Zulema",
+      level: "hight",
+    },
+    {
+      name: "Santiago",
+      level: "low",
+    },
+    {
+      name: "Valentina",
+      level: "medium",
+    },
+    {
+      name: "Lucia",
+      level: "hight",
+    },
+  ];
+  
+  //concatenacion de metodos o "painaimas"
+  const rta1 = data
+  //primero se mapea el arrays
+  .map(item => item.level)
+  //y con el resultado del mapeo se hace el reduce con la respuesta de map
+  .reduce((obj, item) => {
+      if (!obj[item]) {
+          obj[item] = 1;
+      } else {
+          obj[item] = obj[item] + 1;
+      }
+      return obj;
+  }, {});
+  
+
